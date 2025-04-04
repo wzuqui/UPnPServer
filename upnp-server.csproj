@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>UpnpServer</RootNamespace>
+    <AssemblyName>UpnpServer</AssemblyName>
+    <UserSecretsId>66d2cc61-d7a4-4769-999f-446b5eaa398a</UserSecretsId>
+  </PropertyGroup>
+
+  <Target Name="NpmRunBuild" BeforeTargets="BeforeBuild">
+    <Exec Command="npm start" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="5.4.0" />
+    <PackageReference Include="Open.Nat" Version="2.1.0" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="8.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Configurations\AppSettings.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>

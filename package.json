@@ -1,0 +1,6 @@
+{
+  "name": "upnp-server",
+  "scripts": {
+    "start": "node ./Configurations/AppSettings.mjs"
+  }
+}
